@@ -11,6 +11,14 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+NOTE: Before running the app in development mode, create a `.env.local` file in the root of your directory as paste this in it.
+
+```js
+REACT_APP_BASE_API_URL=https://yourbaseurl.com
+```
+
+This will set the base URL used for fetching products
+
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
