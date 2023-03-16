@@ -10,13 +10,20 @@ export default function EachItem({ item }: CartItemProps) {
   const { setCart } = useContext(AppContext);
 
   const incrementItemQuantity = () => {
-    setCart((prev) =>
-      prev.map((eachItem) =>
+    setCart((prev) => {
+      console.log(
+        prev.map((eachItem) =>
+          eachItem.id === item.id
+            ? { ...eachItem, quantity: eachItem.quantity++ }
+            : eachItem
+        )
+      );
+      return prev.map((eachItem) =>
         eachItem.id === item.id
           ? { ...eachItem, quantity: eachItem.quantity++ }
           : eachItem
-      )
-    );
+      );
+    });
   };
 
   const decrementItemQuantity = () => {
