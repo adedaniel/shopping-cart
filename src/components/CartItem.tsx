@@ -28,13 +28,20 @@ export default function EachItem({ item }: CartItemProps) {
 
   const decrementItemQuantity = () => {
     if (item.quantity > 1) {
-      setCart((prev) =>
-        prev.map((eachItem) =>
+      setCart((prev) => {
+        console.log(
+          prev.map((eachItem) =>
+            eachItem.id === item.id
+              ? { ...eachItem, quantity: eachItem.quantity-- }
+              : eachItem
+          )
+        );
+        return prev.map((eachItem) =>
           eachItem.id === item.id
             ? { ...eachItem, quantity: eachItem.quantity-- }
             : eachItem
-        )
-      );
+        );
+      });
     } else {
       removeFromCart();
     }
