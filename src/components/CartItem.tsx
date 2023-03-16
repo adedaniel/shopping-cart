@@ -14,13 +14,13 @@ export default function EachItem({ item }: CartItemProps) {
       console.log(
         prev.map((eachItem) =>
           eachItem.id === item.id
-            ? { ...eachItem, quantity: eachItem.quantity++ }
+            ? { ...eachItem, quantity: eachItem.quantity + 1 }
             : eachItem
         )
       );
       return prev.map((eachItem) =>
         eachItem.id === item.id
-          ? { ...eachItem, quantity: eachItem.quantity++ }
+          ? { ...eachItem, quantity: eachItem.quantity + 1 }
           : eachItem
       );
     });
@@ -32,13 +32,13 @@ export default function EachItem({ item }: CartItemProps) {
         console.log(
           prev.map((eachItem) =>
             eachItem.id === item.id
-              ? { ...eachItem, quantity: eachItem.quantity-- }
+              ? { ...eachItem, quantity: eachItem.quantity - 1 }
               : eachItem
           )
         );
         return prev.map((eachItem) =>
           eachItem.id === item.id
-            ? { ...eachItem, quantity: eachItem.quantity-- }
+            ? { ...eachItem, quantity: eachItem.quantity - 1 }
             : eachItem
         );
       });

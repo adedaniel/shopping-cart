@@ -16,7 +16,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       setCart((prev) =>
         prev.map((cartItem) =>
           cartItem.id === product.id
-            ? { ...cartItem, quantity: cartItem.quantity++ }
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
       );
